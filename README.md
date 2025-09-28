@@ -1,7 +1,6 @@
 # Linktree - Cyberpunk Edition
 
 <img width="1886" height="947" alt="Captura de pantalla 2025-09-28 183037" src="https://github.com/user-attachments/assets/63f8fb41-e714-421b-bb11-4974ef30fcfc" />
-![Avatar]([https://github.com/mi-usuario/mi-repositorio/blob/main/avatar.png](https://github.com/user-attachments/assets/63f8fb41-e714-421b-bb11-4974ef30fcfc))
 
 
 Este proyecto es una página de **Linktree** inspirada en la estética **cyberpunk**. Sirve como una plataforma para centralizar y mostrar todos los enlaces a tus redes sociales y otros enlaces importantes. El diseño utiliza un fondo animado, botones futuristas y un estilo visual de "ciberespacio".
