@@ -11,7 +11,7 @@ var requestOptions = {
     return res.json();
   })
   .then(json => {
-    document.getElementById("name").textContent = "Hola " + json.name + " " + json.lastname;
+    document.getElementById("name").textContent = "Que más pues " + json.name + " " + json.lastname;
     document.getElementById("author").textContent = "2023 - Hecho por " + json.author;
 	  document.getElementById("facebookLink").href = "https://www.facebook.com/" + json.socialMedia.facebookUser;
     document.getElementById("instagramUser").href = "https://www.instagram.com/" + json.socialMedia.instagramUser;

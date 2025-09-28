@@ -7,18 +7,18 @@ CORS(app)
 @app.route('/getMyInfo')
 def getMyInfo():
     value = {
-        "name": "Amin",
-        "lastname": "Espinoza",
+        "name": "Lizbeth",
+        "lastname": "Grisales",
         "socialMedia":
         {
-            "facebookUser": "aminespinoza10",
-            "instagramUser": "aminespinoza10",
-            "xUser": "aminespinoza",
-            "linkedin": "amin-espinoza",
-            "githubUser": "aminespinoza10"
+            "facebookUser": "lizbethgricasc",
+            "instagramUser": "lizgrisalesc",
+            "xUser": "LIZGRICAS",
+            "linkedin": "lizbeth-grisales-castro",
+            "githubUser": "LIZGRICAS"
         },
-        "blog": "https://aminespinoza.com",
-        "author": "Miranda Espinoza"
+        "blog": "https://lizcreative.netlify.app/",
+        "author": "Liz Gricas"
     }
 
     return jsonify(value)

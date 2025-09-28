@@ -3,118 +3,385 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-pink.css">    
-<title>Links website</title>
+<title>Dev Profile - Cyberpunk Edition</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/feather-icons"></script>
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background: url("https://www.w3schools.com/howto/img_link_tree_template2_bg.jpg"); /* The image used for background */
+  margin: 0;
+  padding: 0;
+  font-family: 'Rajdhani', sans-serif;
+  background: #0a0a0a;
+  color: #00ffff;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Animated background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(120, 255, 198, 0.2) 0%, transparent 50%);
+  z-index: -1;
+}
+
+/* Matrix-style grid overlay */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: -1;
+  animation: grid-move 20s linear infinite;
+}
+
+@keyframes grid-move {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(50px, 50px); }
 }
 
 .container {
   width: 100%;
-  height: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
 }
 
+/* Profile section */
+.profile-section {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.profile-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 3px solid #ff00ff;
+  box-shadow: 
+    0 0 30px rgba(255, 0, 255, 0.5),
+    inset 0 0 30px rgba(0, 255, 255, 0.2);
+  margin: 20px auto;
+  position: relative;
+  overflow: hidden;
+  animation: profile-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes profile-glow {
+  0% { 
+    box-shadow: 0 0 30px rgba(255, 0, 255, 0.5), inset 0 0 30px rgba(0, 255, 255, 0.2);
+    border-color: #ff00ff;
+  }
+  100% { 
+    box-shadow: 0 0 50px rgba(0, 255, 255, 0.8), inset 0 0 30px rgba(255, 0, 255, 0.3);
+    border-color: #00ffff;
+  }
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.name-tag {
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  font-size: 1.5rem;
+  background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 20px 0;
+  animation: text-glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes text-glow {
+  0% { text-shadow: 0 0 10px rgba(255, 0, 255, 0.5); }
+  100% { text-shadow: 0 0 20px rgba(0, 255, 255, 0.8); }
+}
+
+.subtitle {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 400;
+  color: #ff00ff;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Section headers */
+.section-header {
+  font-family: 'Orbitron', monospace;
+  font-weight: 600;
+  font-size: 1.3rem;
+  text-align: center;
+  margin: 40px 0 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #00ffff;
+  position: relative;
+}
+
+.section-header::before,
+.section-header::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ff00ff, transparent);
+}
+
+.section-header::before {
+  left: -70px;
+}
+
+.section-header::after {
+  right: -70px;
+}
+
+/* Links container */
 .links-container {
   display: flex;
   flex-direction: column;
-  jusify-content: center;
   align-items: center;
+  gap: 15px;
 }
 
-.links-container a {
+/* Cyberpunk buttons */
+.cyber-link {
   width: 80%;
+  max-width: 400px;
+  padding: 15px 25px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid #00ffff;
+  border-radius: 0;
+  color: #00ffff;
+  text-decoration: none;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
 }
 
-.w3-theme-l1:hover {
-  background-color: #f279a1 !important;
-}
-
-.margin-top-2 {
-  margin-top: 32px;
-}
-
-.bottom {
+.cyber-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
   width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.4), transparent);
+  transition: left 0.5s;
+}
+
+.cyber-link:hover {
+  border-color: #ff00ff;
+  color: #ff00ff;
+  box-shadow: 
+    0 0 30px rgba(255, 0, 255, 0.5),
+    inset 0 0 30px rgba(0, 255, 255, 0.1);
+  transform: translateY(-3px);
+}
+
+.cyber-link:hover::before {
+  left: 100%;
+}
+
+/* Social media icons */
+.cyber-link[id*="facebook"] { border-color: #1877f2; }
+.cyber-link[id*="instagram"] { border-color: #e4405f; }
+.cyber-link[id*="twitter"], .cyber-link[id*="x"] { border-color: #1da1f2; }
+.cyber-link[id*="github"] { border-color: #6e5494; }
+.cyber-link[id*="linkedin"] { border-color: #0077b5; }
+
+.cyber-link[id*="facebook"]:hover { border-color: #ff00ff; color: #ff00ff; }
+.cyber-link[id*="instagram"]:hover { border-color: #ff00ff; color: #ff00ff; }
+.cyber-link[id*="twitter"]:hover, .cyber-link[id*="x"]:hover { border-color: #ff00ff; color: #ff00ff; }
+.cyber-link[id*="github"]:hover { border-color: #ff00ff; color: #ff00ff; }
+.cyber-link[id*="linkedin"]:hover { border-color: #ff00ff; color: #ff00ff; }
+
+/* Footer */
+.cyber-footer {
   text-align: center;
-  width: auto;
-  font-weight: bolder;
+  margin-top: 50px;
+  padding: 20px;
+  font-family: 'Rajdhani', sans-serif;
+  color: #00ffff;
+  font-weight: 400;
 }
 
-.bottom span {
-  color: #ed4d82;
+.cyber-footer .heart-icon {
+  stroke: #ff00ff;
+  fill: #ff00ff;
+  animation: pulse 1.5s ease-in-out infinite;
 }
 
-.bottom svg {
-  stroke: #ed4d82;
-  fill: #ed4d82;
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
 }
 
-@media (min-width: 768px) {
-  .link {
-    width: 100%;
-  }
+.footer-text {
+  color: #ff00ff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
-@media (min-width: 576px) {
+
+/* Responsive design */
+@media (max-width: 768px) {
   .container {
-    max-width: 540px;
+    padding: 15px;
+  }
+  
+  .profile-image {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .name-tag {
+    font-size: 1.3rem;
+  }
+  
+  .cyber-link {
+    width: 90%;
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+  
+  .section-header::before,
+  .section-header::after {
+    width: 30px;
+  }
+  
+  .section-header::before {
+    left: -40px;
+  }
+  
+  .section-header::after {
+    right: -40px;
   }
 }
+
+@media (max-width: 480px) {
+  .cyber-link {
+    width: 95%;
+  }
+  
+  .section-header::before,
+  .section-header::after {
+    display: none;
+  }
+}
+
+/* Loading animation for the whole page */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.container > * {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.container > *:nth-child(1) { animation-delay: 0.1s; }
+.container > *:nth-child(2) { animation-delay: 0.2s; }
+.container > *:nth-child(3) { animation-delay: 0.3s; }
+.container > *:nth-child(4) { animation-delay: 0.4s; }
+.container > *:nth-child(5) { animation-delay: 0.5s; }
+.container > *:nth-child(6) { animation-delay: 0.6s; }
+.container > *:nth-child(7) { animation-delay: 0.7s; }
 </style>
-  </head>
-  <body>
-    <!-- Content container -->
-    <div class="container">
-
-      <!-- Image and name container. Change to your pictue here. -->
-      <div style="text-align: center">
-        <img src="https://avatars.githubusercontent.com/u/106186354?v=4" class="w3-margin" alt="image" width="150px" height="150px" style="border-radius: 50%;">
-        <p ><span class="name w3-padding w3-pink w3-round" style="font-weight: bolder;" id="name">Hola, no funcionas</span></p>
-        <p style="font-weight: bolder;">¡Mira mis enlaces!</p>
+</head>
+<body>
+  <div class="container">
+    <!-- Profile Section -->
+    <div class="profile-section">
+      <div class="profile-image">
+        <img src="/avatar.png" alt="Dev Profile">
       </div>
-
-      <!-- Links section 1. Replace the # inside of the "" with your links. -->
-      <h4 class="margin-top-2" style="text-align: center;">MIS REDES SOCIALES</h4>
-      <div class="links-container">
-        <a id="facebookLink" href="#" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">Facebook</a>
-        <br>
-        <a id="instagramUser" href="#" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">Instagram</a>
-        <br>
-        <a id="xUser" href="#" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">X</a>
-        <br>
-        <a id="githubUser" href="#" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">Github</a>
-      </div>
-
-      <!-- Links section 2. Replace the # inside of the "" with your links. -->
-      <h4 class="margin-top-2" style="text-align: center;">MI EXPERIENCIA</h4>
-      <div class="links-container">
-        <a id="linkedinUser" href="#" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">LinkedIn</a>
-      </div>
-
-      <!-- Links section 3. Replace the # inside of the "" with your links. -->
-      <h4 class="margin-top-2" style="text-align: center;">MI BLOG</h4>
-      <div class="links-container">
-        <a id="website" href="#" class="w3-button w3-round-xlarge w3-theme-l1 w3-border link" target="_blank">Amin Espinoza</a>
-      </div>
-
-      <!-- Bottom section 3 -->
-      <div class="bottom margin-top-2 w3-padding w3-round">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-        <span id="author" style="vertical-align: 7px;"> 2023 - Hecho por Miranda Espinoza</span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-      </div>
-
+      <div class="name-tag" id="name">LIZBETH GRISALES CYBER_DEV</div>
+      <div class="subtitle">¡Explora mi mundo digital!</div>
     </div>
-    <script>
-      feather.replace()
-    </script>
-    <script type="text/javascript" src="requests.js"></script>
-  </body>  
+
+    <!-- Social Networks Section -->
+    <h2 class="section-header">// Mis Redes Sociales</h2>
+    <div class="links-container">
+      <a id="facebookLink" href="#" class="cyber-link" target="_blank">
+        > Facebook.connect()
+      </a>
+      <a id="instagramUser" href="#" class="cyber-link" target="_blank">
+        > Instagram.load()
+      </a>
+      <a id="xUser" href="#" class="cyber-link" target="_blank">
+        > X.execute()
+      </a>
+      <a id="githubUser" href="#" class="cyber-link" target="_blank">
+        > GitHub.repository()
+      </a>
+    </div>
+
+    <!-- Experience Section -->
+    <h2 class="section-header">// Mi Experiencia</h2>
+    <div class="links-container">
+      <a id="linkedinUser" href="#" class="cyber-link" target="_blank">
+        > LinkedIn.profile()
+      </a>
+    </div>
+
+    <!-- Blog Section -->
+    <h2 class="section-header">// Mi Blog</h2>
+    <div class="links-container">
+      <a id="website" href="#" class="cyber-link" target="_blank">
+        > Blog.access()
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <div class="cyber-footer">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+      </svg>
+      <span class="footer-text" id="author"> 2025 - Coded by Cyber Dev </span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+      </svg>
+    </div>
+  </div>
+
+  <script>
+    feather.replace()
+  </script>
+  <script type="text/javascript" src="requests.js"></script>
+</body>
 </html>

@@ -1,0 +1,44 @@
+[
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "CORS",
+        "importPath": "flask_cors",
+        "description": "flask_cors",
+        "isExtraImport": true,
+        "detail": "flask_cors",
+        "documentation": {}
+    },
+    {
+        "label": "getMyInfo",
+        "kind": 2,
+        "importPath": "backend.app",
+        "description": "backend.app",
+        "peekOfCode": "def getMyInfo():\n    value = {\n        \"name\": \"Lizbeth\",\n        \"lastname\": \"Grisales\",\n        \"socialMedia\":\n        {\n            \"facebookUser\": \"lizbethgricasc\",\n            \"instagramUser\": \"lizgrisalesc\",\n            \"xUser\": \"LIZGRICAS\",\n            \"linkedin\": \"lizbeth-grisales-castro\",",
+        "detail": "backend.app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "backend.app",
+        "description": "backend.app",
+        "peekOfCode": "app = Flask(__name__)\nCORS(app)\n@app.route('/getMyInfo')\ndef getMyInfo():\n    value = {\n        \"name\": \"Lizbeth\",\n        \"lastname\": \"Grisales\",\n        \"socialMedia\":\n        {\n            \"facebookUser\": \"lizbethgricasc\",",
+        "detail": "backend.app",
+        "documentation": {}
+    }
+]

@@ -2,18 +2,13 @@ version: '3.7'
 
 services:
   backend:
-    image: backend
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
+    image: lizgricas/backend:latest  # Usa la imagen subida a Docker Hub
     ports:
-      - 5000:5000
+      - "5000:5000"
+  
   frontend:
-    image: frontend
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
+    image: lizgricas/frontend:latest  # Usa la imagen subida a Docker Hub
     ports:
-      - 8080:80
+      - "8080:80"
     depends_on:
       - backend
